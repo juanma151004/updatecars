@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PROYECTO1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+  <div class="Container">
+    <div class="Title"><h1>Update carros semanales</h1></div>
+    <br>
+    date:<h2 id="date"></h2>
+    <main>
+      
+      <div><li><a href="#marca1">Ferrari</a></li></div>
+      <br>
+      <div><li><a href="#marca2">Lamborghini</a></li></div>
+      <h2>Menú Marcas</h2>
+      <div><li><a href="./lamborghini.html" target="_blank">Galeria Lamborghini</a></li></div>
+      <br>
+      <div><li><a href="./ferrari.html">Galeria Ferrari</a></li></div>
+      <h3>En fechas varias se hacen estudios para saber cuales son los mejores carros del momento, y en este espacio de daran a conocer las marcas y modelos.</h3>
+      <img src="./imagenes/carrros_principal.jpg">
+      
+      <h2 id="marca1">Ferrari</h2>
+      <img src="./imagenes/ferrari.jpg" width="512" height="300" align="left">
+      <div class="Hferrari">
+        <p>Ferrari es una compañía de automóviles deportivos con sede en Maranello-Módena (Emilia-Romaña, Italia). Este fabricante es el resultante de la idea de su fundador Enzo Ferrari de crear una marca de automóviles de turismo con prestaciones lujosas y deportivas, basándose en los éxitos obtenidos a partir de la creación de su Scuderia Ferrari de automovilismo en 1929.</p>
+      </div>
+        <h2 id="marca2">Lamborghini</h2>
+        <img src="./imagenes/Lamborghini-logo.png" width="512" height="300" align="left">
+        <div class="Hlamborghini">
+        <p>Lamborghini es un fabricante italiano de automóviles superdeportivos fundado en 1963 por el fabricante de tractores Ferruccio Lamborghini con sede y oficinas en Bolognese y que actualmente es parte de la matriz de Volkswagen. Algunos de los nombres de sus automóviles hacen referencia a nombres de toros bravos de lidia indultados</p>
+      </div>
+      <div class="Abajo">
+        <h3>Marcas relacionadas</h3>
+        <div><a href="https://cars.mclaren.com/">1. MCLAREN</a></div>
+        <div><a href="https://es.chevrolet.com/performance/corvette">2. CORVETTE</a></div>
+        <div><a href="https://www.porsche.com/latin-america-es/">3. PORSCHE</a></div>
+  
+        <h3>Links de intereses</h3>
+        <h4>
+          <div><li><a href="https://www.ferrari.com/">FERRARI</a></li></div>
+          <br>
+          <div><li><a href="https://www.lamborghini.com/">LAMBORGHINI</a></li></div>
+        </h4>
+    
+        visitas:<h2 id="visitas"></h2>
+      </div>
+    </main>
+  </div>
+    <script>
+      let visitasActuales = localStorage.getItem("visitas");
+      if(visitasActuales){
+        let aumento = parseInt(visitasActuales) + 1;
+        document.getElementById("visitas").innerHTML = aumento;
+        localStorage.setItem("visitas", aumento);
+      }
+      else{
+      localStorage.setItem("visitas", 1);
+      document.getElementById("visitas").innerHTML = 1;
+    }
+
+      
+    </script>
+    <script>
+      let date = new Date();
+     document.getElementById("date").innerHTML=date.toLocaleDateString();
+
+    </script>
+  </body>
+
+</html>
